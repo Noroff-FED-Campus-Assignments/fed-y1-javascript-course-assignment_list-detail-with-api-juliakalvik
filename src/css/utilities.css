@@ -1,0 +1,18 @@
+/*!
+ * Utility classes
+ * Utility classes use the is- & u- prefix to indicate they are utility classes.
+ * @tutorial https://web.dev/learn/css/flexbox/
+ * @example https://fed-vocational-astro-course.vercel.app/en/html-css/module-3/media-queries
+ */
+
+.is-hidden {
+  display: none;
+}
+
+.is-invisible {
+  opacity: 0;
+}
+
+.is-visible {
+  opacity: 1;
+}

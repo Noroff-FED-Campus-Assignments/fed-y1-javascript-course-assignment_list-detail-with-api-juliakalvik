@@ -1,0 +1,14 @@
+/*!
+ * Animation
+ * @tutorial https://web.dev/learn/css/animations/
+ * @example https://fed-vocational-astro-course.vercel.app/en/html-css/module-4/animations-transitions
+ */
+
+@keyframes loading-anime {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

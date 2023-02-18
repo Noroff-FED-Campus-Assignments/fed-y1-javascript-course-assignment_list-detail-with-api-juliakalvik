@@ -1,0 +1,20 @@
+{
+  "name": "fed-y1-javascript1-course-assignment-template",
+  "private": true,
+  "version": "0.0.1",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "eslint": "^8.33.0",
+    "eslint-config-prettier": "^8.6.0",
+    "vite": "^4.0.0"
+  },
+  "dependencies": {
+    "animate.css": "^4.1.1",
+    "open-props": "^1.5.5"
+  }
+}
