@@ -1,31 +1,3 @@
-/*!
- * Variables
- * @tutorial https://web.dev/at-property/
- * @example https://fed-vocational-astro-course.vercel.app/en/html-css/module-4/css-variables
- */
-
-:root {
-  /* Add your CSS variables here */
-}
-
-.flex {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  border: 2px;
-}
-.flex > a {
-  border-style: solid;
-  border-radius: 15px;
-  background-color: beige;
-  padding: 20px;
-}
-
-a {
-  text-decoration: none;
-  color: black;
-}
-
 .loader {
   width: 48px;
   height: 48px;

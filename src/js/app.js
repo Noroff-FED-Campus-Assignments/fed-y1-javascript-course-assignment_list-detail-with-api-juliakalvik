@@ -9,8 +9,6 @@ Constants
 
 const dogBreedsList = document.querySelector("#js-list-container");
 
-console.log(dogBreedsList);
-
 /*
 ============================================
 DOM manipulation
@@ -21,7 +19,7 @@ DOM manipulation
 // TODO: Fetch and Render the list to the DOM
 
 const url =
-  "https://api.thedogapi.com/v1/breeds?api_key=live_eCLUkH7OGmrRQFCeC0yvri5a8BrHQgrXv3zWJ4nEj8Gl74j4DDUwxHmxBPevAfZx&limit=10";
+  "https://api.thedogapi.com/v1/breeds?api_key=live_eCLUkH7OGmrRQFCeC0yvri5a8BrHQgrXv3zWJ4nEj8Gl74j4DDUwxHmxBPevAfZx";
 
 let fetchedBreeds = [];
 
@@ -36,33 +34,42 @@ async function fetchBreeds() {
 }
 
 fetchedBreeds = await fetchBreeds();
-console.log(fetchedBreeds);
 
 //1 lag en variabel som skal skrives til HTML-en
 
-let breedNames = "";
-
-console.log(breedNames);
-
-for (let i = 0; i < fetchedBreeds.length; i++) {
-  //2 legg til hver hunderase til variabelen (Tips: +=)
-  breedNames =
-    breedNames +
-    fetchedBreeds[i].name +
-    "<br>" +
-    fetchedBreeds[i].life_span +
-    "<br>" +
-    "<img width=200 src=" +
-    fetchedBreeds[i].image.url +
-    "></img>" +
-    "<br>";
-  console.log(breedNames, "dette er i Vegas");
+//gets a list of breeds
+function writeToHTML(breeds) {
+  let breedNames = ""; //Hires breednames to go to vegas, (But outside vegas so that she/he/they comes back again)
+  for (let i = 0; i < breeds.length; i++) {
+    //Goes to vegas
+    breedNames =
+      //makes sure not to overwrite the other objects by including itself
+      breedNames +
+      //Writes the link to the details page, and includes the image, since it doesnt appear in the details
+      "<a href=details.html?id=" +
+      breeds[i].id +
+      "&image=" +
+      breeds[i].image.url +
+      "> <div> " +
+      //Includes the name, in the link so that it is clickable.
+      breeds[i].name +
+      "<br>" +
+      //Adde the life_span
+      breeds[i].life_span +
+      "<br>" +
+      //Sets the width and adds the image!
+      "<img width=200 src=" +
+      breeds[i].image.url +
+      "></img>" +
+      "<br> </div></a>";
+  }
+  //Writes the new string (Generated in the for loop above) to the HTML
+  dogBreedsList.innerHTML = breedNames;
 }
 
-console.log(breedNames, "ikke i vegas");
+writeToHTML(fetchedBreeds);
 
 //3 skriv ut variabelen:
-document.querySelector("#js-list-container").innerHTML = breedNames;
 
 // TODO: Create event listeners for the filters and the search
 
@@ -77,6 +84,28 @@ Data fectching
 @example: https://github.com/S3ak/fed-javascript1-api-calls/blob/main/examples/games.html#L104
 ============================================
 */
+
+const searchField = document.querySelector("#js-list-search");
+
+searchField.addEventListener("input", function (event) {
+  // Gets the input from the HTML
+  let searchInputValue = event.target.value;
+  // Uses the input to filter the fetched breeds
+  let searchedBreeds = filterBreeds(searchInputValue);
+  // Writes the breeds to the HTML
+  writeToHTML(searchedBreeds);
+});
+
+// Gets a searchterm from the HTML (look at function above)
+function filterBreeds(searchTerm) {
+  // Calls a filterfuntion to the list, wich is called "filtered"
+  let filtered = fetchedBreeds.filter(function (breed) {
+    //Returns any name that corresponds with the searchterm written in the html
+    return breed.name.toLowerCase().includes(searchTerm);
+  });
+  //Returns the list that is filtered above.
+  return filtered;
+}
 
 // TODO: Fetch an array of objects from the API
 
