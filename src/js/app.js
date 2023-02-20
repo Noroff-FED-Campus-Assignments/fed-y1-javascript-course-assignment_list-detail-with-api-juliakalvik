@@ -58,7 +58,7 @@ function writeToHTML(breeds) {
       breeds[i].life_span +
       "<br>" +
       //Sets the width and adds the image!
-      "<img width=200 src=" +
+      "<img class=card_img src=" +
       breeds[i].image.url +
       "></img>" +
       "<br> </div></a>";

@@ -8,22 +8,38 @@
   /* Add your CSS variables here */
 }
 
+html {
+  background-color: #e9ecef;
+}
+
 .flex {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
   border: 2px;
+  margin: auto;
+  width: 80vw;
 }
 .flex > a {
   border-style: solid;
   border-radius: 15px;
-  background-color: beige;
+  background-color: white;
   padding: 20px;
 }
 
 a {
   text-decoration: none;
-  color: black;
+  color: #343a40;
+}
+
+a > div {
+  width: 200px;
+}
+
+.card_img {
+  width: 200px;
+  object-fit: contain;
+  aspect-ratio: 3/2;
 }
 
 .loader {

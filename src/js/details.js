@@ -52,16 +52,15 @@ console.log(fetchedBreed);
 
 breedDetailsHeader.innerHTML = fetchedBreed.name + "-";
 
-breedDetails.innerHTML =
-  "<br> <img width=500 src=" +
-  image +
-  "><p> Bred for: " +
-  fetchedBreed.bred_for +
-  "</p><p><i> Lifespan: " +
-  fetchedBreed.life_span +
-  "</i></p><p> Origin: " +
-  fetchedBreed.origin +
-  "<p>";
+let htmlText = "";
+htmlText += "<div class=details_content>";
+htmlText += "<br> <img class=details_img src=" + image + ">";
+htmlText += "<p> Lifespan: " + fetchedBreed.life_span + "</p>";
+htmlText += "<p> Bred for: " + fetchedBreed.bred_for + "</p>";
+htmlText += "<p> Personality: " + fetchedBreed.temperament + "<p>";
+htmlText += "</div>";
+
+breedDetails.innerHTML = htmlText;
 
 // TODO: Create event listeners for the filters and the search
 
