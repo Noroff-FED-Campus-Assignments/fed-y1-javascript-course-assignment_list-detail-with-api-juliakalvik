@@ -22,6 +22,10 @@
     </header>
 
     <main class="l-main">
+
+      <div class="nav">
+        
+      </div>
       
       <article role="doc-introduction">
         <h2>List</h2>
@@ -30,15 +34,30 @@
       </article>
 
       <section role="search">
+        <label>Name:</label>
         <input id="js-list-search" type="text" label="input text here"></input>
       </section>
 
       <section role="filter">
+        <label>Age:</label>
         <input id="js-list-filter">
       </section>
 
       <section role="personality-filter">
-        <input id="js-list-personality">
+        <label>Personality traits:</label>
+        <select id="js-list-personality" name="pets" id="pet-select">
+          <option value="">--Please choose a personality trait--</option>
+          <option value="playful">Playful</option>
+          <option value="agile">Agile</option>
+          <option value="active">Active</option>
+          <option value="friendly">Friendly</option>
+          <option value="kind">Kind</option>
+          <option value="outgoing">Outgoing</option>
+          <option value="intelligent">Intelligent</option>
+          <option value="trusting">Trusting</option>
+          <option value="gentle">Gentle</option>
+          <option value="loyal">Loyal</option>
+      </select>
       </section>
       
       

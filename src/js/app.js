@@ -26,7 +26,9 @@ let fetchedBreeds = [];
 async function fetchBreeds() {
   try {
     const response = await fetch(url);
+
     const results = await response.json();
+
     return results;
   } catch (error) {
     console.log(error);
@@ -34,7 +36,7 @@ async function fetchBreeds() {
 }
 
 fetchedBreeds = await fetchBreeds();
-
+console.log(fetchedBreeds);
 //1 lag en variabel som skal skrives til HTML-en
 
 //gets a list of breeds
@@ -101,7 +103,6 @@ function filterBreeds(searchTerm) {
   // Calls a filterfuntion to the list, wich is called "filtered"
   let filtered = fetchedBreeds.filter(function (breed) {
     //Returns any name that corresponds with the searchterm written in the html
-    console.log("SearchTERM", searchTerm);
     return breed.name.toLowerCase().includes(searchTerm);
   });
   //Returns the list that is filtered above.
@@ -126,22 +127,24 @@ filteringBreeds.addEventListener("input", function (event) {
 
 const filterPersonality = document.querySelector("#js-list-personality");
 
+//const filteredPersonality = personality.filter(function (event) {
+//  personality.temperament.toLowerCase().includes(searchInputValue);
+//});
+//console.log();
+
 filterPersonality.addEventListener("input", function (event) {
-  let searchInputValue = event.target.value;
-  console.log("linje 131 funker", searchInputValue);
+  let selectValue = event.target.value;
   let filtered = fetchedBreeds.filter(function (breed) {
-    return breed.temperament.includes(searchInputValue);
+    if (breed.temperament != undefined) {
+      return breed.temperament.toLowerCase().includes(selectValue);
+    } else {
+      return;
+    }
   });
   console.log("filtered temperament", filtered);
 
   writeToHTML(filtered);
 });
-
-//function filterPersonality() {
-//let personality = document.getElementById("#js-list-personality"),
-// url = `https://api.thedogapi.com/v1/breeds/?api_key=live_eCLUkH7OGmrRQFCeC0yvri5a8BrHQgrXv3zWJ4nEj8Gl74j4DDUwxHmxBPevAfZx`;
-//}
-//console.log(personality);
 
 // TODO: Fetch an array of objects from the API
 
