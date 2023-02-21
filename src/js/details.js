@@ -53,11 +53,16 @@ console.log(fetchedBreed);
 breedDetailsHeader.innerHTML = fetchedBreed.name + "-";
 
 let htmlText = "";
+document.title = `Details for ${fetchedBreed.name}`;
 htmlText += "<div class=details_content>";
 htmlText += "<br> <img class=details_img src=" + image + ">";
 htmlText += "<p> Lifespan: " + fetchedBreed.life_span + "</p>";
-htmlText += "<p> Bred for: " + fetchedBreed.bred_for + "</p>";
-htmlText += "<p> Personality: " + fetchedBreed.temperament + "<p>";
+if (fetchedBreed.bred_for != undefined) {
+  htmlText += "<p> Bred for: " + fetchedBreed.bred_for + "</p>";
+}
+if (fetchedBreed.temperament != undefined) {
+  htmlText += "<p> Personality: " + fetchedBreed.temperament + "<p>";
+}
 htmlText += "</div>";
 
 breedDetails.innerHTML = htmlText;

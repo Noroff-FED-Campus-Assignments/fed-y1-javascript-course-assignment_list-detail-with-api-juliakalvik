@@ -101,11 +101,47 @@ function filterBreeds(searchTerm) {
   // Calls a filterfuntion to the list, wich is called "filtered"
   let filtered = fetchedBreeds.filter(function (breed) {
     //Returns any name that corresponds with the searchterm written in the html
+    console.log("SearchTERM", searchTerm);
     return breed.name.toLowerCase().includes(searchTerm);
   });
   //Returns the list that is filtered above.
   return filtered;
 }
+
+//få inn trim!V
+
+const filteringBreeds = document.querySelector("#js-list-filter");
+
+filteringBreeds.addEventListener("input", function (event) {
+  let searchInputValue = event.target.value;
+  let filtered = fetchedBreeds.filter(function (breed) {
+    return breed.life_span.includes(searchInputValue);
+  });
+  console.log(filtered);
+  console.log(searchInputValue);
+  writeToHTML(filtered);
+});
+
+//Reliable, Fearless, Energetic, Lively, Self-assured"
+
+const filterPersonality = document.querySelector("#js-list-personality");
+
+filterPersonality.addEventListener("input", function (event) {
+  let searchInputValue = event.target.value;
+  console.log("linje 131 funker", searchInputValue);
+  let filtered = fetchedBreeds.filter(function (breed) {
+    return breed.temperament.includes(searchInputValue);
+  });
+  console.log("filtered temperament", filtered);
+
+  writeToHTML(filtered);
+});
+
+//function filterPersonality() {
+//let personality = document.getElementById("#js-list-personality"),
+// url = `https://api.thedogapi.com/v1/breeds/?api_key=live_eCLUkH7OGmrRQFCeC0yvri5a8BrHQgrXv3zWJ4nEj8Gl74j4DDUwxHmxBPevAfZx`;
+//}
+//console.log(personality);
 
 // TODO: Fetch an array of objects from the API
 

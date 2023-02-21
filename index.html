@@ -18,20 +18,30 @@
   </head>
   <body class="animate__animated animate__fadeIn"> 
     <header class="l-header">
-      <h1>Home</h1>
+      <h1>Meet your new family member here!</h1>
     </header>
 
     <main class="l-main">
+      
+      <article role="doc-introduction">
+        <h2>List</h2>
+        
+        <p>Here you can scroll through all the different breeds of dogs, search for a specific breed in the search bar or use the filtering option.</p>
+      </article>
+
       <section role="search">
         <input id="js-list-search" type="text" label="input text here"></input>
       </section>
 
-      <article role="doc-introduction">
-        <h2>List</h2>
+      <section role="filter">
+        <input id="js-list-filter">
+      </section>
 
-        <p>Find your favorite dog breed here:</p>
-      </article>
-
+      <section role="personality-filter">
+        <input id="js-list-personality">
+      </section>
+      
+      
       <section role="list" >
         <div class="flex" id="js-list-container"><span class="loader"></span></div>
       </section>
