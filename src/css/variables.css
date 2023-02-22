@@ -13,13 +13,36 @@ html {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
+.description {
+  width: 400px;
+}
+
+.info-and-filtering {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  margin-top: 50px;
+  align-items: center;
+}
+
+input,
+select {
+  border: 3px solid #343a40;
+  padding: 5px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
 .flex {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 20px;
   border: 2px;
   margin: auto;
-  width: 80vw;
+  width: 90vw;
+  margin-top: 20px;
 }
 .flex > a {
   border-radius: 10px;

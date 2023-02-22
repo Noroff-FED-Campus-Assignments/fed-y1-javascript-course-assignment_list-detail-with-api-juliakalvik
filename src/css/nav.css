@@ -1,0 +1,33 @@
+nav {
+  width: 100%;
+  background-color: #fff;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  text-align: center;
+  align-items: center;
+  position: relative;
+  text-align: center;
+}
+
+ul {
+  display: inline-block;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 0;
+}
+ul li {
+  list-style-type: none;
+  cursor: pointer;
+  margin: 20px;
+  text-align: center;
+  padding: 5px 50px;
+}
+
+nav a:hover {
+  opacity: 0.5;
+}
+
+.flex a:hover {
+  background-color: lightgray;
+}

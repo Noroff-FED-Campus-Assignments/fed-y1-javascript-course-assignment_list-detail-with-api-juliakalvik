@@ -11,56 +11,79 @@
     />
     <meta name="author" content="Julia Kalvik" />
     <!-- TODO: Import Javascript -->
+    <script src="https://kit.fontawesome.com/670adc412b.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="src/css/variables.css" />
+    <link rel="stylesheet" href="src/css/nav.css" />
     <script type="module" src="src/js/app.js"></script>
 
-    <title>Find your favorite dog breed!</title>
+    <title>🐶 DogLibrary.com</title>
   </head>
   <body class="animate__animated animate__fadeIn"> 
-    <header class="l-header">
-      <h1>Meet your new family member here!</h1>
+    <header class="nav">
+      <nav>
+        <a href="index.html" class="header"><h1>DogLibrary™</h1></a>
+        <ul id="navbar">
+            <li class="nav-contact"><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
     </header>
 
-    <main class="l-main">
-
-      <div class="nav">
-        
+    
+    <section class="info-and-filtering">
+      <div class="info">
+        <h1>Welcome to DogLibrary</h1>
+        <p class="description">Are you looking for a new family member, but not sure what breed to get? We got you! Our DogLibrary let's you scroll through all breeds of dogs there is, helping you decide on which one to adopt.</p>
+        <h4>Find your new family member here:</h4>
       </div>
-      
       <article role="doc-introduction">
-        <h2>List</h2>
-        
-        <p>Here you can scroll through all the different breeds of dogs, search for a specific breed in the search bar or use the filtering option.</p>
       </article>
+      <div class="filtering">
+        <section role="search">
+          <p>Filter by:</p>
+          <label>Name:</label><br>
+          <input id="js-list-search" type="text" placeholder="Ex. poodle"></input>
+        </section>
+  
+        <section role="filter">
+          <label>Life span (years):</label><br>
+          <input id="js-list-filter" placeholder="Ex. 8">
+        </section>
+        <section role="ascending-filter">
+          <label>Sorting order:</label><br>
+          <select id="js-list-ascending" name="order-by">
+          <option value="">--Show in order from:--</option>
+          <option value="az">A-Z</option>
+          <option value="za">Z-A</option>
+        </select>
+        </section>
+  
+        <section role="personality-filter">
+          <label>Personality traits:</label><br>
+          <select id="js-list-personality" name="personality-traits">
+            <option value="">--Please choose a personality trait--</option>
+            <option value="playful">Playful</option>
+            <option value="agile">Agile</option>
+            <option value="active">Active</option>
+            <option value="friendly">Friendly</option>
+            <option value="kind">Kind</option>
+            <option value="outgoing">Outgoing</option>
+            <option value="intelligent">Intelligent</option>
+            <option value="trusting">Trusting</option>
+            <option value="gentle">Gentle</option>
+            <option value="loyal">Loyal</option>
+        </select>
 
-      <section role="search">
-        <label>Name:</label>
-        <input id="js-list-search" type="text" label="input text here"></input>
-      </section>
+      </div>
+    
+    </section>
 
-      <section role="filter">
-        <label>Age:</label>
-        <input id="js-list-filter">
-      </section>
 
-      <section role="personality-filter">
-        <label>Personality traits:</label>
-        <select id="js-list-personality" name="pets" id="pet-select">
-          <option value="">--Please choose a personality trait--</option>
-          <option value="playful">Playful</option>
-          <option value="agile">Agile</option>
-          <option value="active">Active</option>
-          <option value="friendly">Friendly</option>
-          <option value="kind">Kind</option>
-          <option value="outgoing">Outgoing</option>
-          <option value="intelligent">Intelligent</option>
-          <option value="trusting">Trusting</option>
-          <option value="gentle">Gentle</option>
-          <option value="loyal">Loyal</option>
-      </select>
-      </section>
+      </div>
+
+
+    </section>
       
-      
+    <main class="l-main">
       <section role="list" >
         <div class="flex" id="js-list-container"><span class="loader"></span></div>
       </section>

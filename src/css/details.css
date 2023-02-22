@@ -15,6 +15,14 @@ html {
   aspect-ratio: 3/2;
 }
 
+a {
+  text-decoration: none;
+  color: #343a40;
+  display: flex;
+  text-align: center;
+  font-size: 20px;
+}
+
 .l-header {
   display: flex;
   flex-direction: column;

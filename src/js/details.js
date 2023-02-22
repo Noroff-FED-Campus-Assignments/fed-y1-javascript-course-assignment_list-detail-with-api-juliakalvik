@@ -50,10 +50,10 @@ let fetchedBreed = await fetchBreed();
 
 console.log(fetchedBreed);
 
-breedDetailsHeader.innerHTML = fetchedBreed.name + "-";
+breedDetailsHeader.innerHTML = fetchedBreed.name + " ";
 
 let htmlText = "";
-document.title = `Details for ${fetchedBreed.name}`;
+document.title = `🐶 ${fetchedBreed.name} info`;
 htmlText += "<div class=details_content>";
 htmlText += "<br> <img class=details_img src=" + image + ">";
 htmlText += "<p> Lifespan: " + fetchedBreed.life_span + "</p>";
