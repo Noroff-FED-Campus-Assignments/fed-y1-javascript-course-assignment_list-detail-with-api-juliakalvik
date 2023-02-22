@@ -26,7 +26,6 @@ let fetchedBreeds = [];
 async function fetchBreeds() {
   try {
     const response = await fetch(url);
-
     const results = await response.json();
 
     return results;
@@ -37,6 +36,7 @@ async function fetchBreeds() {
 
 fetchedBreeds = await fetchBreeds();
 console.log(fetchedBreeds);
+
 //1 lag en variabel som skal skrives til HTML-en
 
 //gets a list of breeds
@@ -65,6 +65,7 @@ function writeToHTML(breeds) {
       "></img>" +
       "<br> </div></a>";
   }
+
   //Writes the new string (Generated in the for loop above) to the HTML
   dogBreedsList.innerHTML = breedNames;
 }
@@ -127,11 +128,6 @@ filteringBreeds.addEventListener("input", function (event) {
 
 const filterPersonality = document.querySelector("#js-list-personality");
 
-//const filteredPersonality = personality.filter(function (event) {
-//  personality.temperament.toLowerCase().includes(searchInputValue);
-//});
-//console.log();
-
 filterPersonality.addEventListener("input", function (event) {
   let selectValue = event.target.value;
   let filtered = fetchedBreeds.filter(function (breed) {
@@ -145,6 +141,40 @@ filterPersonality.addEventListener("input", function (event) {
 
   writeToHTML(filtered);
 });
+
+fetchedBreeds.sort(function (a, b) {
+  const orderByValue = orderByEl.value;
+  if (orderByValue === "az") {
+    return a.breedNames.localeCompare(b.breedNames);
+  } else if (orderByValue === "za") {
+    return b.breedNames.localeCompare(a.breedNames);
+  }
+
+  writeToHTML(orderByValue);
+});
+
+const filterAscending = document.querySelector("#js-list-ascending");
+
+function sortDogsByBreedOrder(fetchedBreeds, order) {
+  if (order === "az") {
+    fetchedBreeds.sort((a, b) => (a.fetchedBreeds > b.fetchedBreeds ? 1 : -1));
+  } else if (order === "za") {
+    fetchedBreeds.sort((a, b) => (a.fetchedBreeds < b.fetchedBreeds ? 1 : -1));
+  }
+  return fetchedBreeds;
+}
+
+//filterAscending.addEventListener("input", function (event) {
+// let selectValue = event.target.value;
+// let reversed = fetchedBreeds.reverse;
+// let filtered = fetchedBreeds.filter(function (breed) {
+//   if (selectValue === "Az") {
+//     return fetchedBreeds;
+//   } else if (selectValue === "Za") {
+//     return fetchedBreeds.reverse;
+//   }
+// });
+//});
 
 // TODO: Fetch an array of objects from the API
 
