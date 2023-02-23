@@ -43,8 +43,8 @@ All of these todo's must be done to pass the asssignment.
 
 ## End-user success criteria (Optional - 100%)
 
-- [] End-user can search for a specific item.
-- [ ] End-user can filter the list.
+- [x] End-user can search for a specific item.
+- [x] End-user can filter the list.
 - [ ] End-user can sort list by;
   - [ ] Name ascending order
   - [ ] Name descending order
@@ -59,23 +59,23 @@ All of these todo's must be done to pass the asssignment.
 - [ ] End-user can view a custom favicon.
 - [ ] CSS uses variables
 - [ ] Code is dry - There are no repeating functions, variables.
-- [ ] My commit messages are relavant and make sense. [How to write good commit messages](https://www.freecodecamp.org/news/how-to-write-better-git-commit-messages/)
+- [x] My commit messages are relavant and make sense. [How to write good commit messages](https://www.freecodecamp.org/news/how-to-write-better-git-commit-messages/)
 - [ ] [End-user experiences a complete custom UI design.](https://www.figma.com/file/KExTTAE75DRhq2xTvapFR4/FED-Whiteboard?node-id=0%3A1&t=UItKehGgT8gRlibY-1)
 
-  - [ ] Is user-friendly
+  - [x] Is user-friendly
   - [ ] Effective use of the pillars of design
     - [ ] Typography
-    - [ ] COlour
-    - [ ] Composition
+    - [x] COlour
+    - [x] Composition
     - [ ] Art Direction
     - [ ] Motion
   - [ ] Adhered to principles of design
-    - [ ] Contrast
+    - [x] Contrast
     - [ ] Balance and alignment
     - [ ] Emphasis
     - [ ] Proportion
     - [ ] Hiearchy
-    - [ ] Repetition
+    - [x] Repetition
     - [ ] Ryhthem
     - [ ] Pattern
     - [ ] Negative space
@@ -87,23 +87,23 @@ Make sure you go through this checklist before submitting your project to Moodle
 
 - [ ] All pages have a meta description.
 - [ ] All pages have a valid title.
-- [ ] All pages import the correct css files.
-- [ ] All pages import the correct JS file.
-- [ ] Details page URL includes a query param.
-- [ ] My website makes a GET request to an API to get a list of results.
-- [ ] My website makes a GET request to an API to get details of one result.
+- [x] All pages import the correct css files.
+- [x] All pages import the correct JS file.
+- [x] Details page URL includes a query param.
+- [x] My website makes a GET request to an API to get a list of results.
+- [x] My website makes a GET request to an API to get details of one result.
 - [ ] Input fields have the following attributes;
 - [ ] All images have an alt tag;
   - [ ] A name,
   - [ ] A placeholder,
   - [ ] A aria-describedby,
   - [ ] Required
-- [ ] I have not copied Javascript code.
-- [ ] I have not used a Javascript library.
+- [x] I have not copied Javascript code.
+- [x] I have not used a Javascript library.
 - [ ] Removed all unused files.
 - [ ] Named all images properly.
 - [ ] Committed all my code to github.
-- [ ] My repo is publically viewable.
+- [x] My repo is publically viewable.
 - [ ] I've submitted/ written a report.
 - [ ] I've removed all todo notes in code.
 - [ ] I've removed all console logs in code.
