@@ -67,6 +67,7 @@ htmlText += "</div>";
 
 breedDetails.innerHTML = htmlText;
 
+
 // TODO: Create event listeners for the filters and the search
 
 /*
