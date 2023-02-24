@@ -1,5 +1,3 @@
-[![Open in Visual Studio Code](https://classroom.github.com/assets/open-in-vscode-c66648af7eb3fe8bc4f294546bfd86ef473780cde1dea487d3c4ff354943c9ae.svg)](https://classroom.github.com/online_ide?assignment_repo_id=10193086&assignment_repo_type=AssignmentRepo)
-
 # FED Javascript 1 - Course Assignment
 
 This is a vanilla website that displays a list of items fetched from an API.
@@ -8,14 +6,14 @@ This project was bootstrapped with Vite.
 
 ## Resources
 
-- [Design](_LINK_TO_FIGMA_)
 - [Production deploy](_LINK_TO_WEBSITE_)
-- [Deployment CI](_LINK_TO_NETLIFY_VERCEL_DASHBOARD_)
-- [API Docs](_LINK_TO_API_DOCS_)
+- API used: https://portal.thatapicompany.com/pages/dog-api
 
 ## Report
 
-_ADD_YOUR_REPORT_HERE_
+This project is a course assignment with the purpose to learn about API and javascript. I chose a dog-API and tried to make my website look kind of like a library of dogs, where you can scroll through all dog breeds, search for specific breeds and click on the breed you like to get some more info (all info fetched from the API). It's my first time ever working with both API and javascript and the code is not perfect. I have tried a few different ways to write javascript code and do functions.
+
+The filtering options are only working separately, meaning that the filters are not connected and has nothing to do with each other. This is something I hope to be able to learn how to fix in near future so that I can make a more advanced and user friendly filtering option.
 
 ## Getting Started
 
@@ -59,9 +57,8 @@ All of these todo's must be done to pass the asssignment.
 - [ ] End-user can view a custom favicon.
 - [ ] CSS uses variables
 - [x] Code is dry - There are no repeating functions, variables.
-- [x] My commit messages are relavant and make sense. [How to write good commit messages](https://www.freecodecamp.org/news/how-to-write-better-git-commit-messages/)
+- [x] My commit messages are relavant and make sense.
 - [ ] [End-user experiences a complete custom UI design.](https://www.figma.com/file/KExTTAE75DRhq2xTvapFR4/FED-Whiteboard?node-id=0%3A1&t=UItKehGgT8gRlibY-1)
-
   - [x] Is user-friendly
   - [ ] Effective use of the pillars of design
     - [ ] Typography
@@ -100,16 +97,16 @@ Make sure you go through this checklist before submitting your project to Moodle
   - [x] Required
 - [x] I have not copied Javascript code.
 - [x] I have not used a Javascript library.
-- [ ] Removed all unused files.
+- [x] Removed all unused files.
 - [ ] Named all images properly.
-- [ ] Committed all my code to github.
+- [x] Committed all my code to github.
 - [x] My repo is publically viewable.
-- [ ] I've submitted/ written a report.
-- [ ] I've removed all todo notes in code.
-- [ ] I've removed all console logs in code.
-- [ ] Code is formatted correctly.
-- [ ] There are no red underlines in VSCode.
-- [ ] There are no error messages in the terminal when I run the project.
+- [x] I've submitted/ written a report.
+- [x] I've removed all todo notes in code.
+- [x] I've removed all console logs in code.
+- [x] Code is formatted correctly.
+- [x] There are no red underlines in VSCode.
+- [x] There are no error messages in the terminal when I run the project.
 - [x] My code is indented correctly.
 - [ ] I've checked my report for grammer & spelling using grammerly or chatGPT
 - [ ] I've used used [conventional commits](https://www.conventionalcommits.org/en/v1.0.0/)
@@ -131,5 +128,5 @@ Make sure you go through this checklist before submitting your project to Moodle
 
 ## Authors
 
-- _YOURE_NAME_ (@_your_github_username_)
+- Julia Kalvik (@juliakalvik)
 - Monde Sineke (@S3ak)

@@ -1,17 +1,3 @@
-/*
-============================================
-Constants
-@example: https://github.com/S3ak/fed-javascript1-api-calls/blob/main/examples/advanced-form.html#L50
-============================================
-*/
-/* 
-Name - required
-Subject - must have a value with a minimum length of 10
-Email - must have a value and be formatted like an email address
-Address - must have a value with a minimum length of 25
-*/
-// TODO: Get DOM elements from the DOM
-//const formElement = document.getElementById("form");
 const formElement = document.getElementById("form");
 const nameElement = document.getElementById("form-name");
 const passwordElement = document.getElementById("form-password");
@@ -20,20 +6,8 @@ const feedback = document.getElementById("feedback");
 const streetAdressElement = document.getElementById("form-streetaddress");
 const messageElement = document.getElementById("form-message");
 
-// TODO: Create event listeners for the form
-
 formElement.addEventListener("submit", validateInput, true);
 
-/*
-============================================
-Helper functions
-@example: https://github.com/S3ak/fed-javascript1-api-calls/blob/main/examples/advanced-form.html#L118
-============================================
-*/
-
-// TODO: Create a function to validate an input field
-
-// Minmum 2 characters, must be letters only
 const nameRegex = /^[a-zA-Z]{1,}/;
 const emailRegex =
   /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/;
@@ -75,11 +49,3 @@ function validateInput(event) {
     alert("You have submittet your form!");
   }
 }
-
-// TODO: Create a function to create a DOM element
-
-// Email Validation as per RFC2822 standards.
-
-// - at least 8 characters
-// - must contain at least 1 uppercase letter, 1 lowercase letter, and 1 number
-// - Can contain special characters
