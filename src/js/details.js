@@ -1,8 +1,5 @@
 const breedDetails = document.querySelector("#object-details");
 const breedDetailsHeader = document.querySelector("#js-h1");
-
-console.log(breedDetails);
-
 const queryparameter = new URLSearchParams(window.location.search);
 
 const id = queryparameter.get("id");
@@ -19,7 +16,7 @@ async function fetchBreed() {
     const results = await response.json();
     return results;
   } catch (error) {
-    console.log(error);
+    console.error(error);
     alert(
       "Something went wrong! Please try again, or visit later 🐶(- voff voff)"
     );
@@ -27,9 +24,6 @@ async function fetchBreed() {
 }
 
 let fetchedBreed = await fetchBreed();
-
-console.log(fetchedBreed);
-
 breedDetailsHeader.innerHTML = fetchedBreed.name + " ";
 
 let htmlText = "";

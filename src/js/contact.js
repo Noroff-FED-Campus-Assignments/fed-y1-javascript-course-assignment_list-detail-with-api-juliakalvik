@@ -17,7 +17,6 @@ function validateInput(event) {
   event.preventDefault();
   let fail = false;
   let fields = "";
-  console.log(nameRegex.test(nameElement.value));
   if (!nameRegex.test(nameElement.value)) {
     fields += "name, ";
     fail = true;

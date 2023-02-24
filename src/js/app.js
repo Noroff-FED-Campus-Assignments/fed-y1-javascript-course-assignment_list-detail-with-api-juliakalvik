@@ -12,7 +12,7 @@ async function fetchBreeds() {
 
     return results;
   } catch (error) {
-    console.log(error);
+    console.error(error);
     alert(
       "Something went wrong! Please try again, or visit us later 🐶( - voff)"
     );
@@ -73,8 +73,6 @@ filteringBreeds.addEventListener("input", function (event) {
   let filtered = fetchedBreeds.filter(function (breed) {
     return breed.life_span.includes(searchInputValue);
   });
-  console.log(filtered);
-  console.log(searchInputValue);
   writeToHTML(filtered);
 });
 
@@ -89,8 +87,6 @@ filterPersonality.addEventListener("input", function (event) {
       return;
     }
   });
-  console.log("filtered temperament", filtered);
-
   writeToHTML(filtered);
 });
 
