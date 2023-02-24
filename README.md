@@ -6,7 +6,7 @@ This project was bootstrapped with Vite.
 
 ## Resources
 
-- [Production deploy](_LINK_TO_WEBSITE_)
+- Deployed website: https://master--statuesque-naiad-1f2ee4.netlify.app/
 - API used: https://portal.thatapicompany.com/pages/dog-api
 
 ## Report
