@@ -3,6 +3,8 @@ import { resolve } from "path";
 import { defineConfig } from "vite";
 export default defineConfig({
   build: {
+    minify: "esbuild",
+    target: "esnext",
     rollupOptions: {
       input: {
         main: resolve(__dirname, "index.html"),
