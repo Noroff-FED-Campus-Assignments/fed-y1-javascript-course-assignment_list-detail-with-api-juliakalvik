@@ -31,6 +31,9 @@ async function fetchBreeds() {
     return results;
   } catch (error) {
     console.log(error);
+    alert(
+      "Something went wrong! Please try again, or visit us later 🐶( - voff)"
+    );
   }
 }
 
@@ -60,7 +63,9 @@ function writeToHTML(breeds) {
       breeds[i].life_span +
       "<br>" +
       //Sets the width and adds the image!
-      "<img class=card_img src=" +
+      "<img class=card_img alt='image of " +
+      breeds[i].name +
+      ".' src=" +
       breeds[i].image.url +
       "></img>" +
       "<br> </div></a>";
@@ -142,39 +147,29 @@ filterPersonality.addEventListener("input", function (event) {
   writeToHTML(filtered);
 });
 
-fetchedBreeds.sort(function (a, b) {
-  const orderByValue = orderByEl.value;
-  if (orderByValue === "az") {
-    return a.breedNames.localeCompare(b.breedNames);
-  } else if (orderByValue === "za") {
-    return b.breedNames.localeCompare(a.breedNames);
+let order = [1, -1, 0];
+function compare(dog1, dog2) {
+  if (dog1.name < dog2.name) {
+    return order[0];
   }
-
-  writeToHTML(orderByValue);
-});
-
-const filterAscending = document.querySelector("#js-list-ascending");
-
-function sortDogsByBreedOrder(fetchedBreeds, order) {
-  if (order === "az") {
-    fetchedBreeds.sort((a, b) => (a.fetchedBreeds > b.fetchedBreeds ? 1 : -1));
-  } else if (order === "za") {
-    fetchedBreeds.sort((a, b) => (a.fetchedBreeds < b.fetchedBreeds ? 1 : -1));
+  if (dog1.name > dog2.name) {
+    return order[1];
+  } else {
+    return 0;
   }
-  return fetchedBreeds;
 }
 
-//filterAscending.addEventListener("input", function (event) {
-// let selectValue = event.target.value;
-// let reversed = fetchedBreeds.reverse;
-// let filtered = fetchedBreeds.filter(function (breed) {
-//   if (selectValue === "Az") {
-//     return fetchedBreeds;
-//   } else if (selectValue === "Za") {
-//     return fetchedBreeds.reverse;
-//   }
-// });
-//});
+const orderBy = document.querySelector("#js-list-ascending");
+orderBy.addEventListener("input", function (event) {
+  let selectValue = event.target.value;
+  if (selectValue === "za") {
+    order = [1, -1];
+  } else {
+    order = [-1, 1];
+  }
+  let filtered = fetchedBreeds.sort(compare);
+  writeToHTML(filtered);
+});
 
 // TODO: Fetch an array of objects from the API
 

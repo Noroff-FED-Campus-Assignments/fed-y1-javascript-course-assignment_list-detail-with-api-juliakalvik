@@ -43,6 +43,9 @@ async function fetchBreed() {
     return results;
   } catch (error) {
     console.log(error);
+    alert(
+      "Something went wrong! Please try again, or visit later 🐶(- voff voff)"
+    );
   }
 }
 
@@ -55,7 +58,8 @@ breedDetailsHeader.innerHTML = fetchedBreed.name + " ";
 let htmlText = "";
 document.title = `🐶 ${fetchedBreed.name} info`;
 htmlText += "<div class=details_content>";
-htmlText += "<br> <img class=details_img src=" + image + ">";
+htmlText +=
+  "<br> <img alt='picture of a dog' class=details_img src=" + image + ">";
 htmlText += "<p> Lifespan: " + fetchedBreed.life_span + "</p>";
 if (fetchedBreed.bred_for != undefined) {
   htmlText += "<p> Bred for: " + fetchedBreed.bred_for + "</p>";
@@ -66,7 +70,6 @@ if (fetchedBreed.temperament != undefined) {
 htmlText += "</div>";
 
 breedDetails.innerHTML = htmlText;
-
 
 // TODO: Create event listeners for the filters and the search
 

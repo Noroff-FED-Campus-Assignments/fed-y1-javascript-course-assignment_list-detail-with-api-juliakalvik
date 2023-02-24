@@ -42,6 +42,7 @@ select {
   justify-content: center;
   gap: 20px;
   padding: 40px;
+  align-items: center;
 }
 
 select {
@@ -78,4 +79,6 @@ select {
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding-right: 40px;
+  padding-top: 20px;
 }
