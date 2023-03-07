@@ -1,30 +1,50 @@
-/*
-============================================
-Constants
-@example: https://github.com/S3ak/fed-javascript1-api-calls/blob/main/examples/advanced-form.html#L50
-============================================
-*/
+const formElement = document.getElementById("form");
+const nameElement = document.getElementById("form-name");
+const passwordElement = document.getElementById("form-password");
+const emailElement = document.getElementById("form-email");
+const feedback = document.getElementById("feedback");
+const streetAdressElement = document.getElementById("form-streetaddress");
+const messageElement = document.getElementById("form-message");
 
-// TODO: Get DOM elements from the DOM
+formElement.addEventListener("submit", validateInput, true);
 
-// TODO: Create event listeners for the form
+const nameRegex = /^[a-zA-Z]{1,}/;
+const emailRegex =
+  /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/;
+const passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/;
 
-/*
-============================================
-API calls
-@example: https://github.com/S3ak/fed-javascript1-api-calls/blob/main/examples/advanced-form.html#L157
-============================================
-*/
-
-// TODO: Set up a function to fetch data from the API
-
-/*
-============================================
-Helper functions
-@example: https://github.com/S3ak/fed-javascript1-api-calls/blob/main/examples/advanced-form.html#L118
-============================================
-*/
-
-// TODO: Create a function to validate an input field
-
-// TODO: Create a function to create a DOM element
+function validateInput(event) {
+  event.preventDefault();
+  let fail = false;
+  let fields = "";
+  if (!nameRegex.test(nameElement.value)) {
+    fields += "name, ";
+    fail = true;
+  }
+  if (!passwordRegex.test(passwordElement.value)) {
+    fields += "password, ";
+    fail = true;
+  }
+  if (!emailRegex.test(emailElement.value)) {
+    fields += "email, ";
+    fail = true;
+  }
+  if (messageElement.value.length < 10) {
+    fields += "form message, ";
+    fail = true;
+  }
+  if (streetAdressElement.value.length < 25) {
+    fields += "adress, ";
+    fail = true;
+  }
+  if (fail) {
+    feedback.innerHTML =
+      "<p>There is something wrong in the " +
+      fields +
+      " field(s) please correct it and resubmit!</p>";
+  } else {
+    feedback.innerHTML =
+      "<p> Congratulations! the form is correctly filled out! </p>";
+    alert("You have submittet your form!");
+  }
+}

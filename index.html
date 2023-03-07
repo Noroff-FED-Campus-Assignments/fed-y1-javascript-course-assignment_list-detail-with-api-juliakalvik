@@ -4,37 +4,104 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="_REPLACE_WITH_DESCRIPTION_" />
+    <meta name="description" content="🐶DogLibrary" />
     <meta
       name="keywords"
-      content="HTML, CSS, JavaScript, _REPLACE_WITH_KEYWORD_"
+      content="HTML, CSS, JavaScript, API, DogLibrary, dogs"
     />
-    <meta name="author" content="_YOUR_NAME_" />
-    <link rel="stylesheet" href="/style.css" />
-    <!-- TODO: Import Javascript -->
-    <title>_REPLACE_SITE_NAME</title>
+    <meta name="author" content="Julia Kalvik" />
+    <script src="https://kit.fontawesome.com/670adc412b.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="src/css/variables.css" />
+    <link rel="stylesheet" href="src/css/nav.css" />
+    <script type="module" defer src="src/js/app.js"></script>
+    <!-- Hotjar Tracking Code for my site -->
+<script>
+  (function(h,o,t,j,a,r){
+      h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+      h._hjSettings={hjid:3396635,hjsv:6};
+      a=o.getElementsByTagName('head')[0];
+      r=o.createElement('script');r.async=1;
+      r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+      a.appendChild(r);
+  })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+</script>
+    
+
+    <title>🐶 DogLibrary.com</title>
+
   </head>
-  <body class="animate__animated animate__fadeIn">
-    <header class="l-header">
-      <h1>Home</h1>
+  <body class="animate__animated animate__fadeIn"> 
+    <header class="nav">
+      <nav>
+        <a href="index.html" class="header"><h1>DogLibrary™</h1></a>
+        <ul id="navbar">
+            <li class="nav-contact"><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
     </header>
 
-    <main class="l-main">
-      <section role="search"></section>
-
+    <section class="info-and-filtering">
+      <div class="info">
+        <h1>Welcome to DogLibrary</h1>
+        <p class="description">Are you looking for a new family member, but not sure what breed to get? We got you! Our DogLibrary let's you scroll through all breeds of dogs there is, helping you decide on which one to adopt.</p>
+        <h4>Find your new family member here:</h4>
+      </div>
       <article role="doc-introduction">
-        <h2>List</h2>
-
-        <p>_REPLACE_INTRODUCTION_</p>
       </article>
+      <div class="filtering">
+        <section role="search">
+          <p>Filter by:</p>
+          <label>Name:</label><br>
+          <input id="js-list-search" type="text" placeholder="Ex. poodle"></input>
+        </section>
+  
+        <section role="filter">
+          <label>Life span (years):</label><br>
+          <input id="js-list-filter" placeholder="Ex. 8">
+        </section>
+        <section role="ascending-filter">
+          <label>Sorting order:</label><br>
+          <select id="js-list-ascending" name="order-by">
+          <option value="">--Show in order from:--</option>
+          <option value="az">A-Z</option>
+          <option value="za">Z-A</option>
+        </select>
+        </section>
+  
+        <section role="personality-filter">
+          <label>Personality traits:</label><br>
+          <select id="js-list-personality" name="personality-traits">
+            <option value="">--Please choose a personality trait--</option>
+            <option value="playful">Playful</option>
+            <option value="agile">Agile</option>
+            <option value="active">Active</option>
+            <option value="friendly">Friendly</option>
+            <option value="kind">Kind</option>
+            <option value="outgoing">Outgoing</option>
+            <option value="intelligent">Intelligent</option>
+            <option value="trusting">Trusting</option>
+            <option value="gentle">Gentle</option>
+            <option value="loyal">Loyal</option>
+        </select>
 
-      <section role="list">
-        <div id="js-list-container">_LOADING_INDICATOR_GOES_HERE_</div>
+      </div>
+    
+    </section>
+
+
+      </div>
+
+
+    </section>
+      
+    <main class="l-main">
+      <section role="list" >
+        <div class="flex" id="js-list-container"><span class="loader"></span></div>
       </section>
     </main>
 
     <footer class="l-footer">
-      <small>Created with ❤️ by _REPLACE_</small>
+      <small>Created with ❤️ by Julia</small>
     </footer>
   </body>
 </html>

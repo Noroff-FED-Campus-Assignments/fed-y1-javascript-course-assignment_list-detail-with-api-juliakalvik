@@ -4,29 +4,54 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="_REPLACE_WITH_DESCRIPTION_" />
+    <meta name="description" content="Dog details page" />
     <meta
       name="keywords"
-      content="HTML, CSS, JavaScript, _REPLACE_WITH_KEYWORD_"
+      content="HTML, CSS, JavaScript, API, DogLibrary, dogs"
     />
-    <meta name="author" content="_YOUR_NAME_" />
-    <link rel="stylesheet" href="/style.css" />
-    <!-- TODO: Import Javascript -->
-    <title>_REPLACE_WITH_OBJECT_TITLE | _REPLACE_SITE_NAME</title>
+    <meta name="author" content="Julia Kalvik" />
+    <link rel="stylesheet" href="src/css/details.css" />
+    <link rel="stylesheet" href="src/css/nav.css" />
+    <script type="module" src="src/js/details.js"></script>
+    <!-- Hotjar Tracking Code for my site -->
+    <script>
+      (function (h, o, t, j, a, r) {
+        h.hj =
+          h.hj ||
+          function () {
+            (h.hj.q = h.hj.q || []).push(arguments);
+          };
+        h._hjSettings = { hjid: 3396635, hjsv: 6 };
+        a = o.getElementsByTagName("head")[0];
+        r = o.createElement("script");
+        r.async = 1;
+        r.src = t + h._hjSettings.hjid + j + h._hjSettings.hjsv;
+        a.appendChild(r);
+      })(window, document, "https://static.hotjar.com/c/hotjar-", ".js?sv=");
+    </script>
+    <title>Dog | 🐶DogLibrary</title>
   </head>
   <body class="animate__animated animate__fadeIn">
+    <header class="nav">
+      <nav>
+        <a href="index.html" class="header"><h1>DogLibrary™</h1></a>
+        <ul id="navbar">
+          <li class="nav-contact"><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
     <header class="l-header">
-      <h1><span id="js-h1">_REPLACE_WITH_OBJECT_TITLE</span>Details</h1>
+      <h1><span id="js-h1">_REPLACE_WITH_OBJECT_TITLE</span>info</h1>
     </header>
 
     <main class="l-main">
       <article>
-        <!-- TODO: Insert loading indicator and replace with object detail properties -->
+        <div id="object-details"><span class="loader"></span></div>
       </article>
     </main>
 
     <footer class="l-footer">
-      <small>Created with ❤️ by _REPLACE_</small>
+      <small>Created with ❤️ by Julia</small>
     </footer>
   </body>
 </html>
